@@ -1,0 +1,229 @@
+.products {
+    padding: 10px 0;
+    &__cards-wrapper {
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        @media (max-width: 1310px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+        }
+        @media (max-width: 1070px) {
+            grid-template-columns: 1fr 1fr 1fr ;
+        }
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr 1fr  ;
+        }
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr  ;
+        }
+    }
+
+    &__cards-item {
+        border-radius: 10px;
+        padding: 10px;
+        display: inline-block;
+        width: 100%;
+        &:hover {
+            background-color: rgb(233, 227, 227);
+        }
+        @media (max-width: 600px) {
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+    &__cards-image {
+        border-radius: 10px;
+        position: relative;
+        img {
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+        }
+        &:hover {
+            .products__show {
+                display: block;
+            }
+        }
+    }
+
+    &__show {
+        position: absolute;
+        top: 45%;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        background-color: rgb(255, 255, 255, 0.6);
+        text-align: center;
+        font-size: $_24px;
+        color: $black;
+        border: none;
+        cursor: pointer;
+        display: none;
+    }
+
+    &__sale {
+        position: absolute;
+        bottom: 15%;
+        left: 5%;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        font-size: $_14px;
+        padding: 0 5px;
+    }
+
+    .btn-style {
+        border: 0;
+        border-radius: 10px;
+        height: 36px;
+        &:hover {
+            font-size: $_18px;
+            font-weight: 600;
+            background-color: rgb(154, 198, 200);
+        }
+    }
+
+    &__discription {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__price {
+        font-size: $_24px;
+        font-weight: 600;
+    }
+
+    &__old-price {
+        font-size: $_18px;
+        padding-left: 10px;
+        text-decoration: line-through;
+        font-weight: 200;
+    }
+
+    &__names {
+        font-weight: 600;
+        span {
+            opacity: 0.5;
+            font-weight: 200;
+        }
+    }
+
+    &__rating {
+        font-size: $_18px;
+    }
+
+    .fa-star {
+        font-size: $_14px;
+        color: rgb(205, 205, 39);
+        padding: 0 5px 0 0;
+    }
+
+
+    
+}
+
+
+.modal-overlay {
+	position: fixed;
+    z-index: 10;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.modal-D {
+	background-color: #fff;
+	width: 800px;
+	height: 600px;
+    padding: 10px;
+    background-color: rgb(238, 228, 228);
+	align-items: center;
+	justify-content: space-around;
+    position: relative;
+	display: none;
+    @media (max-width: 1024px) {
+        width: 600px;
+	    height: 400px;
+    }
+    @media (max-width: 650px) {
+        width: 450px;
+	    height: 300px;
+    }
+}
+
+.modal-overlay--visible {
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.3s ease-in-out;
+}
+
+.modal--visible {
+	display: flex;
+}
+
+
+.modalImg {
+    object-fit: cover;
+    width: 56%;
+    @media (max-width: 1024px) {
+        width: 50%;
+    }
+}
+
+.short-info {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.modal-name-card {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.modal-price {
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+.btn-x {
+    padding: 1px 5px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    &:hover {
+        background-color: rgb(231, 101, 101);
+        color: #fff;
+    }
+}
+
+.btn-basket {
+    background-color: rgb(131, 131, 215);
+    border: 0;
+    border-radius: 7px;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 8%;
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 1 8 4;
+    }
+}
